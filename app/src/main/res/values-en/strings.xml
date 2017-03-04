@@ -7,4 +7,22 @@
     <string name="organisation">Organisation</string>
     <string name="settings">Settings</string>
     <string name="nfc_scan">Scan NFC Chip</string>
+    <string name="barcode_button_text">Scan Barcode</string>
+    <string name="barcode_camera_text">Scan the Barcode</string>
+    <string name="cpu">CPU:</string>
+    <string name="device">Device:</string>
+    <string name="end_app">Close Application</string>
+    <string name="end_app_text">Close the Application for sure?</string>
+    <string name="english">English</string>
+    <string name="german">German</string>
+    <string name="language">Language:</string>
+    <string name="login">Login</string>
+    <string name="name">Name</string>
+    <string name="nightmode">Nightmode</string>
+    <string name="no">No</string>
+    <string name="password">Password</string>
+    <string name="result">Result</string>
+    <string name="save_password">Save password</string>
+    <string name="sensor">Sensors</string>
+    <string name="yes">Yes</string>
 </resources>

@@ -30,9 +30,15 @@
     <string name="barcode_button_text">Barcode scannen</string>
     <string name="barcode_camera_text">Scanne den Barcode</string>
 
+    <!-- Settings -->
+    <string name="nightmode">Nachtmodus</string>
+    <string name="language">Sprache:</string>
+    <string name="german">Deutsch</string>
+    <string name="english">Englisch</string>
+
 
     <!-- Sonstiges -->
-    <string name="drawer_open">drawer open</string>
-    <string name="drawer_close">drawer close</string>
+    <string name="drawer_open" translatable="false">drawer open</string>
+    <string name="drawer_close" translatable="false">drawer close</string>
 
 </resources>

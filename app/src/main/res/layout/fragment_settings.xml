@@ -1,13 +1,81 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.felixhahmann.felixdesigntests.fragments.SettingsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/settings" />
+    <ImageView
+        android:id="@+id/nightmode_ic"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_lightbulb_outline_black_48px"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/nightmode_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nightmode"
+        android:textSize="24dp"
+        android:layout_toRightOf="@+id/nightmode_ic"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"/>
+
+    <Switch
+        android:id="@+id/nightmode_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp" />
+
+
+    <TextView
+        android:id="@+id/language_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/nightmode_ic"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"/>
+
+    <TextView
+        android:id="@+id/german_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/german"
+        android:textSize="24dp"
+        android:layout_below="@+id/language_text"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="16dp"/>
+
+    <CheckBox
+        android:id="@+id/german_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/german_text"
+        android:layout_alignEnd="@+id/nightmode_switch" />
+
+    <TextView
+        android:id="@+id/english_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/english"
+        android:textSize="24dp"
+        android:layout_below="@+id/german_text"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"/>
+
+    <CheckBox
+        android:id="@+id/english_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/english_text"
+        android:layout_alignStart="@+id/german_checkBox" />
+
+</RelativeLayout>

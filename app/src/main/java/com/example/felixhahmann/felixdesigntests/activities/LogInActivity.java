@@ -14,7 +14,7 @@ import com.example.felixhahmann.felixdesigntests.R;
 
 public class LogInActivity extends AppCompatActivity
 {
-    long sleepTimeInMills = 2000;
+    long sleepTimeInMills = 200;
     Toolbar toolbar;
 
     @Override

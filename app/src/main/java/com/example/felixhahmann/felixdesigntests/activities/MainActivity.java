@@ -22,13 +22,13 @@ import com.example.felixhahmann.felixdesigntests.fragments.SettingsFragment;
 public class MainActivity extends AppCompatActivity
 {
     /*ToDo:
-    -Test vom Repo
+    -Settings fixen & implementieren (Sprachenänderung fixen, NightMode implementieren)
+    -Settings refactoren
     -Dashboard mit Inhalt füllen (Hard-/Software)
     -Sensor Fragment mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class implementieren
     -BarcodeScan fixen
     -Infoseite erstellen
-    -Settings implementieren (z.B. Sprachenänderung, NightMode)
     -NFC Chips auslesen programmieren
     -Benchmarking Fragment hinzufügen?
     -Übersetzen der restlichen Wörter im String.xml
@@ -48,12 +48,35 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
 
+        //setLanguageInSettings();
+
         loadLayout();
 
         getFirstFragment();
 
         setNavigationView();
     }
+
+
+
+    /*
+    public void setLanguageInSettings()
+    {
+        String currentLanguage = getResources().getConfiguration().locale.toString();
+        switch (currentLanguage)
+        {
+            case "de_DE":
+                language = 0;
+                break;
+
+            case "en_US":
+                language = 1;
+                break;
+        }
+    }
+    */
+
+
 
     public void loadLayout()
     {

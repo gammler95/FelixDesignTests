@@ -22,6 +22,7 @@ import com.example.felixhahmann.felixdesigntests.fragments.SettingsFragment;
 public class MainActivity extends AppCompatActivity
 {
     /*ToDo:
+    -Test vom Repo
     -Dashboard mit Inhalt füllen (Hard-/Software)
     -Sensor Fragment mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class implementieren

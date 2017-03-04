@@ -1,0 +1,174 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.felixhahmann.felixdesigntests.fragments.SensorFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:text="Licht:       **** Coming soon ****"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/light_text" />
+
+        <TextView
+            android:text="***Light***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/light"
+            android:layout_below="@+id/light_text" />
+
+        <TextView
+            android:text="Accelerometer:"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/light"
+            android:layout_marginTop="16dp"
+            android:id="@+id/acc_text" />
+
+        <TextView
+            android:text="***Acc***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/acc_text"
+            android:id="@+id/acc" />
+
+        <TextView
+            android:text="Linear Accelerometer:"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/acc"
+            android:layout_marginTop="16dp"
+            android:id="@+id/linAcc_text" />
+
+        <TextView
+            android:text="***LinAcc***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linAcc_text"
+            android:id="@+id/linAcc" />
+
+        <TextView
+            android:text="Temperatur"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linAcc"
+            android:layout_marginTop="16dp"
+            android:id="@+id/temp_text" />
+
+        <TextView
+            android:text="***Temp***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/temp_text"
+            android:id="@+id/temp" />
+
+        <TextView
+            android:text="Näherung:"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/temp"
+            android:layout_marginTop="16dp"
+            android:id="@+id/prox_text" />
+
+        <TextView
+            android:text="***Prox***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prox_text"
+            android:id="@+id/prox" />
+
+        <TextView
+            android:text="Luftdruck:"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prox"
+            android:layout_marginTop="16dp"
+            android:id="@+id/pres_text" />
+
+        <TextView
+            android:text="***Pres***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pres_text"
+            android:id="@+id/pres" />
+
+        <TextView
+            android:text="Magnetfeld:"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pres"
+            android:layout_marginTop="16dp"
+            android:id="@+id/magn_text" />
+
+        <TextView
+            android:text="***Magn***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/magn_text"
+            android:id="@+id/magn" />
+
+        <TextView
+            android:text="Orientation:"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/magn"
+            android:layout_marginTop="16dp"
+            android:id="@+id/orient_text" />
+
+        <TextView
+            android:text="***Orient***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orient_text"
+            android:id="@+id/orient" />
+
+        <TextView
+            android:text="Heartrate:"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orient"
+            android:layout_marginTop="16dp"
+            android:id="@+id/heart_text" />
+
+        <TextView
+            android:text="***Heart***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/heart_text"
+            android:id="@+id/heart" />
+
+        <TextView
+            android:text="Gyroscope:"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/heart"
+            android:layout_marginTop="16dp"
+            android:id="@+id/gyro_text" />
+
+        <TextView
+            android:text="***Gyro***"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gyro_text"
+            android:id="@+id/gyro" />
+    </RelativeLayout>
+
+</FrameLayout>

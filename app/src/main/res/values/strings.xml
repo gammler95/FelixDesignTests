@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name" translatable="false">FelixDesignTests</string>
+
+    <!-- logIn -->
+    <string name="login">Anmelden</string>
+    <string name="save_password">Passwort speichern</string>
+    <string name="password">Passwort</string>
+    <string name="name">Name</string>
+    <string name="end_app">Applikation beenden</string>
+    <string name="end_app_text">Applikation wirklich beenden?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+
+    <!-- Menü -->
+    <string name="dashboard">Dashboard</string>
+    <string name="sensor">Sensoren</string>
+    <string name="barcode_scan">Barcode scannen</string>
+    <string name="nfc_scan">NFC Chip scannen</string>
+    <string name="information">Informationen</string>
+    <string name="organisation">Organisation</string>
+    <string name="settings">Einstellungen</string>
+    <string name="logout">Abmelden</string>
+
+    <!-- Dashboard -->
+    <string name="device">Gerät:</string>
+    <string name="cpu">CPU:</string>
+
+    <!-- Barcode -->
+    <string name="result">Ergebnis</string>
+    <string name="barcode_button_text">Barcode scannen</string>
+    <string name="barcode_camera_text">Scanne den Barcode</string>
+
+
+    <!-- Sonstiges -->
+    <string name="drawer_open">drawer open</string>
+    <string name="drawer_close">drawer close</string>
+
+</resources>

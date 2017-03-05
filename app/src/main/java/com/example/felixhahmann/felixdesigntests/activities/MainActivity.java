@@ -16,18 +16,21 @@ import com.example.felixhahmann.felixdesigntests.fragments.BarcodeScanFragment;
 import com.example.felixhahmann.felixdesigntests.fragments.DashboardFragment;
 import com.example.felixhahmann.felixdesigntests.fragments.InfoFragment;
 import com.example.felixhahmann.felixdesigntests.fragments.NfcScanFragment;
+import com.example.felixhahmann.felixdesigntests.fragments.NotificationsFragment;
 import com.example.felixhahmann.felixdesigntests.fragments.SensorFragment;
 import com.example.felixhahmann.felixdesigntests.fragments.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity
 {
     /*ToDo:
+    -Notification Fragment weiter bearbeiten
+    -Bei Klick auf normale Notification --> man soll wieder im Notification Frag landen, nicht im Dashboard
     -Settings fixen & implementieren (Sprachenänderung fixen, NightMode implementieren)
     -Settings refactoren
+    -BarcodeScan fixen
     -Dashboard mit Inhalt füllen (Hard-/Software)
     -Sensor Fragment mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class implementieren
-    -BarcodeScan fixen
     -Infoseite erstellen
     -NFC Chips auslesen programmieren
     -Benchmarking Fragment hinzufügen?
@@ -128,6 +131,10 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.nfc_scan_id:
                 openNewFragment(new NfcScanFragment(), item);
+                break;
+
+            case R.id.notification:
+                openNewFragment(new NotificationsFragment(), item);
                 break;
 
             case R.id.info_id:

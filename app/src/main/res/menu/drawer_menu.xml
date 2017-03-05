@@ -28,6 +28,12 @@
             android:icon="@drawable/ic_nfc_black_48px">
         </item>
 
+        <item
+            android:id="@+id/notification"
+            android:title="@string/notifications"
+            android:icon="@drawable/ic_notifications_active_black_48px">
+        </item>
+
     </group>
 
     <item

@@ -40,6 +40,9 @@
     <string name="normal_notification_text">Normale Benachrichtigung</string>
     <string name="notification_header">Deine Benachrichtigung</string>
     <string name="info">Info</string>
+    <string name="popup_notification_text">Popup Fenster</string>
+    <string name="popup_title">Das ist dein Popup</string>
+    <string name="ok">Ok</string>
 
     <!-- Settings -->
     <string name="organisation">Organisation</string>

@@ -5,9 +5,11 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +32,46 @@ public class NotificationsFragment extends Fragment
 
         buttonNormalNotification(view);
 
+        buttonPopupNotification(view);
+
         return view;
+    }
+
+    public void buttonPopupNotification(View view)
+    {
+        Button bPopupNotification = (Button) view.findViewById(R.id.popup_notification_button);
+        bPopupNotification.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                EditText notificationText = (EditText) getView().findViewById(R.id.notification_text);
+                String notificationTextString =  notificationText.getText().toString();
+                if(notificationTextString.isEmpty())
+                {
+                    //nothing
+                }
+                else
+                {
+                    triggerPopupNotification(notificationTextString);
+                }
+            }
+        });
+    }
+
+    public void triggerPopupNotification(String notificationTextString)
+    {
+        new AlertDialog.Builder(getActivity())
+                .setTitle(R.string.popup_title)
+                .setMessage(notificationTextString)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        //nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     public void buttonNormalNotification(View view)

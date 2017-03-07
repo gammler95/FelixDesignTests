@@ -23,6 +23,9 @@ import com.example.felixhahmann.felixdesigntests.fragments.SettingsFragment;
 public class MainActivity extends AppCompatActivity
 {
     /*ToDo:
+
+    *** PUSH & PULL nicht vergessen!! ***
+
     -Notification Fragment weiter bearbeiten
     -Bei Klick auf normale Notification --> man soll wieder im Notification Frag landen, nicht im Dashboard
     -Settings fixen & implementieren (Sprachenänderung fixen, NightMode implementieren)
@@ -33,7 +36,6 @@ public class MainActivity extends AppCompatActivity
     -Sensors Class implementieren
     -Infoseite erstellen
     -NFC Chips auslesen programmieren
-    -Benchmarking Fragment hinzufügen?
     -Übersetzen der restlichen Wörter im String.xml
     -Weitere freshe Dinge ausdenken
 

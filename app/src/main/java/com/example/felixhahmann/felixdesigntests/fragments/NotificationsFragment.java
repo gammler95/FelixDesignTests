@@ -15,6 +15,7 @@ import android.support.v7.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -56,6 +57,7 @@ public class NotificationsFragment extends Fragment
                 }
                 else
                 {
+                    hideKeyboard(v);
                     triggerSnackbarNotification(notificationTextString);
                 }
             }
@@ -83,6 +85,7 @@ public class NotificationsFragment extends Fragment
                 }
                 else
                 {
+                    hideKeyboard(v);
                     triggerPopupNotification(notificationTextString);
                 }
             }
@@ -120,6 +123,7 @@ public class NotificationsFragment extends Fragment
                 }
                 else
                 {
+                    hideKeyboard(v);
                     triggerNormalNotification(notificationTextString);
                 }
             }
@@ -148,4 +152,12 @@ public class NotificationsFragment extends Fragment
         notificationManager.notify(1, b.build());
     }
 
+    public void hideKeyboard(View v)
+    {
+        if (v != null)
+        {
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        }
+    }
 }

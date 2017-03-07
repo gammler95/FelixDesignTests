@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity
 
     *** PUSH & PULL nicht vergessen!! ***
 
-    -Notification Fragment weiter bearbeiten
     -Bei Klick auf normale Notification --> man soll wieder im Notification Frag landen, nicht im Dashboard
     -Settings fixen & implementieren (Sprachenänderung fixen, NightMode implementieren)
     -Settings refactoren

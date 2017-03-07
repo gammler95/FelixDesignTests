@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/notification_layout"
     tools:context="com.example.felixhahmann.felixdesigntests.fragments.NotificationsFragment">
 
     <EditText
@@ -29,6 +30,16 @@
         android:layout_height="wrap_content"
         android:text="@string/popup_notification_text"
         android:layout_below="@id/normal_notification_button"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <Button
+        android:id="@+id/snackbar_notification_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/snackbar_notification_text"
+        android:layout_below="@id/popup_notification_button"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>

@@ -43,6 +43,7 @@
     <string name="popup_notification_text">Popup Fenster</string>
     <string name="popup_title">Das ist dein Popup</string>
     <string name="ok">Ok</string>
+    <string name="snackbar_notification_text">Snackbar</string>
 
     <!-- Settings -->
     <string name="organisation">Organisation</string>

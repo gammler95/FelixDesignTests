@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.NotificationCompat;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 import com.example.felixhahmann.felixdesigntests.R;
 import com.example.felixhahmann.felixdesigntests.activities.MainActivity;
@@ -34,7 +36,36 @@ public class NotificationsFragment extends Fragment
 
         buttonPopupNotification(view);
 
+        buttonSnackbarNotification(view);
+
         return view;
+    }
+
+    public void buttonSnackbarNotification(View view)
+    {
+        Button bSnackbarNotification = (Button) view.findViewById(R.id.snackbar_notification_button);
+        bSnackbarNotification.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                EditText notificationText = (EditText) getView().findViewById(R.id.notification_text);
+                String notificationTextString =  notificationText.getText().toString();
+                if(notificationTextString.isEmpty())
+                {
+                    //nothing
+                }
+                else
+                {
+                    triggerSnackbarNotification(notificationTextString);
+                }
+            }
+        });
+    }
+
+    public void triggerSnackbarNotification(String notificationTextString)
+    {
+        RelativeLayout relativeLayout = (RelativeLayout) getView().findViewById(R.id.notification_layout);
+        Snackbar.make(relativeLayout, notificationTextString, Snackbar.LENGTH_SHORT).show();
     }
 
     public void buttonPopupNotification(View view)

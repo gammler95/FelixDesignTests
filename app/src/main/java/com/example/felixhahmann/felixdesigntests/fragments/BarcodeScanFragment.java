@@ -1,9 +1,7 @@
 package com.example.felixhahmann.felixdesigntests.fragments;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,12 +31,17 @@ public class BarcodeScanFragment extends Fragment
             }
         });
 
+        Button bGetScanResult = (Button) view.findViewById(R.id.getScanResult);
+        bGetScanResult.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                getScanResult();
+            }
+        });
+
         return view;
     }
-
-
-
-    // *** Barcode geht noch nicht ***
 
     public void scanBarcode()
     {
@@ -50,14 +53,10 @@ public class BarcodeScanFragment extends Fragment
         integrator.initiateScan();
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    public void getScanResult()
     {
-        if (data != null)
-        {
-            TextView tv = (TextView) getView().findViewById(R.id.result);
-            tv.setText(data.toString());
-        }
+        TextView tv = (TextView) getView().findViewById(R.id.result);
+        tv.setText(((MainActivity)getActivity()).getBarcodeScanResult());
     }
 }
 

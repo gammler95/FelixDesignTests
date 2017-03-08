@@ -27,6 +27,7 @@
     <string name="result">Ergebnis</string>
     <string name="barcode_button_text">Barcode scannen</string>
     <string name="barcode_camera_text">Scanne den Barcode</string>
+    <string name="show_result">Ergebnis anzeigen</string>
 
     <!-- NFC Scan -->
     <string name="nfc_scan">NFC Chip scannen</string>

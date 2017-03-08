@@ -1,5 +1,6 @@
 package com.example.felixhahmann.felixdesigntests.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -9,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.felixhahmann.felixdesigntests.R;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     -Bei Klick auf normale Notification --> man soll wieder im Notification Frag landen, nicht im Dashboard
     -Settings fixen & implementieren (Sprachenänderung fixen, NightMode implementieren)
     -Settings refactoren
-    -BarcodeScan fixen
+    -BarcodeScan fixen, dass der 2. Button nichtmehr nötig ist
     -Dashboard mit Inhalt füllen (Hard-/Software)
     -Sensor Fragment mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class implementieren
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity
     ActionBarDrawerToggle actionBarDrawerToggle;
     FragmentTransaction fragmentTransaction;
     NavigationView navigationView;
+
+    String barcodeScanResult = "Leer";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -166,6 +170,13 @@ public class MainActivity extends AppCompatActivity
         drawerLayout.closeDrawers();
     }
 
+    public void openNewFragment(Fragment fragment)
+    {
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_container, fragment);
+        fragmentTransaction.commit();
+    }
+
     public void setActionBarTitle(String title)
     {
         getSupportActionBar().setTitle(title);
@@ -176,5 +187,36 @@ public class MainActivity extends AppCompatActivity
     {
         super.onPostCreate(savedInstanceState);
         actionBarDrawerToggle.syncState();
+    }
+
+    //For Barodescan
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (data != null)
+        {
+            barcodeScanResult = data.getStringExtra("SCAN_RESULT");
+            openNewFragment(new BarcodeScanFragment());
+        }
+    }
+
+    public String getBarcodeScanResult()
+    {
+        return barcodeScanResult;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState)
+    {
+        savedInstanceState.putString("Barcode_Scan_Result", barcodeScanResult);
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState)
+    {
+        super.onRestoreInstanceState(savedInstanceState);
+        barcodeScanResult = savedInstanceState.getString("Barcode_Scan_Result");
     }
 }

@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
+import android.widget.Switch;
 
 import com.example.felixhahmann.felixdesigntests.R;
 import com.example.felixhahmann.felixdesigntests.activities.MainActivity;
@@ -28,8 +29,27 @@ public class SettingsFragment extends Fragment
 
         ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.settings));
 
-        final CheckBox german_checkBox = (CheckBox)view.findViewById( R.id.german_checkBox);
-        final CheckBox english_checkBox = (CheckBox)view.findViewById( R.id.english_checkBox);
+        Switch nightmode_switch = (Switch)view.findViewById(R.id.nightmode_switch);
+        CheckBox german_checkBox = (CheckBox)view.findViewById(R.id.german_checkBox);
+        CheckBox english_checkBox = (CheckBox)view.findViewById(R.id.english_checkBox);
+
+
+        nightmode_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
+                if(isChecked)
+                {
+                    //Nightmode aktivieren
+                }
+                else
+                {
+                    //Nightmode deaktivieren
+                }
+            }
+        });
+
+
 
         setCurrentCheckBox(german_checkBox, english_checkBox);
 

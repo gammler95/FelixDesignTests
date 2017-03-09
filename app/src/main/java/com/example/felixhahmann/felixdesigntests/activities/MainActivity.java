@@ -27,16 +27,18 @@ public class MainActivity extends AppCompatActivity
 
     *** PUSH & PULL nicht vergessen!! ***
 
-    -Bei Klick auf normale Notification --> man soll wieder im Notification Frag landen, nicht im Dashboard
+    -Settings: weiter implementieren (NightMode implementieren)
+    -Dashboard: mit Inhalt füllen (Hard-/Software)
+    -Sensor Fragment: mit Inhalt füllen (Texte dynamisieren!!)
+    -Sensors Class: implementieren
+    -Infoseite: erstellen
+    -NFC: Chips auslesen programmieren
+
+    Nice to have:
+    -Notification: Bei Klick auf normale Notification --> man soll wieder im Notification Frag landen, nicht im Dashboard
     -Settings: bei Language change wieder im Settingsfragment landen
     -Settings: LogIn Act. soll auch in jeweiliger Sprache sein
-    -Settings: weiter implementieren (NightMode implementieren)
-    -Dashboard mit Inhalt füllen (Hard-/Software)
-    -Sensor Fragment mit Inhalt füllen (Texte dynamisieren!!)
-    -Sensors Class implementieren
-    -Infoseite erstellen
-    -NFC Chips auslesen programmieren
-    -Übersetzen der restlichen Wörter im String.xml
+
     -Weitere freshe Dinge ausdenken
 
     */

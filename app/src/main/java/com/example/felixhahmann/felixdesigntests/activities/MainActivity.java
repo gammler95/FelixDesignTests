@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.felixhahmann.felixdesigntests.R;
-import com.example.felixhahmann.felixdesigntests.fragments.BarcodeScanFragment;
+import com.example.felixhahmann.felixdesigntests.fragments.QrCodeScanFragment;
 import com.example.felixhahmann.felixdesigntests.fragments.DashboardFragment;
 import com.example.felixhahmann.felixdesigntests.fragments.InfoFragment;
 import com.example.felixhahmann.felixdesigntests.fragments.NfcScanFragment;
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity
     -Settings: bei Language change wieder im Settingsfragment landen
     -Settings: LogIn Act. soll auch in jeweiliger Sprache sein
     -Settings: weiter implementieren (NightMode implementieren)
-    -BarcodeScan --> kann ich auch QR scannen?
     -Dashboard mit Inhalt füllen (Hard-/Software)
     -Sensor Fragment mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class implementieren
@@ -49,12 +48,14 @@ public class MainActivity extends AppCompatActivity
     FragmentTransaction fragmentTransaction;
     NavigationView navigationView;
 
-    String barcodeScanResult = "Leer";
+    String qrCodeScanResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        qrCodeScanResult = getString(R.string.result);
 
         loadLayout();
 
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.barcode_scan_id:
-                openNewFragment(new BarcodeScanFragment(), item);
+                openNewFragment(new QrCodeScanFragment(), item);
                 break;
 
             case R.id.nfc_scan_id:
@@ -172,20 +173,20 @@ public class MainActivity extends AppCompatActivity
 
         if (data != null)
         {
-            barcodeScanResult = data.getStringExtra("SCAN_RESULT");
-            openNewFragment(new BarcodeScanFragment());
+            qrCodeScanResult = data.getStringExtra("SCAN_RESULT");
+            openNewFragment(new QrCodeScanFragment());
         }
     }
 
-    public String getBarcodeScanResult()
+    public String getQrCodeScanResult()
     {
-        return barcodeScanResult;
+        return qrCodeScanResult;
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState)
     {
-        savedInstanceState.putString("Barcode_Scan_Result", barcodeScanResult);
+        savedInstanceState.putString("Qr_Code_Scan_Result", qrCodeScanResult);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -193,7 +194,7 @@ public class MainActivity extends AppCompatActivity
     public void onRestoreInstanceState(Bundle savedInstanceState)
     {
         super.onRestoreInstanceState(savedInstanceState);
-        barcodeScanResult = savedInstanceState.getString("Barcode_Scan_Result");
+        qrCodeScanResult = savedInstanceState.getString("Qr_Code_Scan_Result");
     }
 
     public void onBackPressed()

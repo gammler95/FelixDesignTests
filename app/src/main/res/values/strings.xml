@@ -22,11 +22,11 @@
     <!-- Sensors -->
     <string name="sensor">Sensoren</string>
 
-    <!-- Barcode -->
-    <string name="barcode_scan">Barcode scannen</string>
+    <!-- QR-Code -->
+    <string name="qr_code_scan">QR-Code scannen</string>
     <string name="result">Ergebnis</string>
-    <string name="barcode_button_text">Barcode scannen</string>
-    <string name="barcode_camera_text">Scanne den Barcode</string>
+    <string name="qr_code_button_text">QR-Code scannen</string>
+    <string name="qr_code_camera_text">Scanne den QR-Code</string>
 
     <!-- NFC Scan -->
     <string name="nfc_scan">NFC Chip scannen</string>

@@ -1,14 +1,14 @@
 <resources>
 
     <string name="dashboard">Dashboard</string>
-    <string name="barcode_scan">Scan Barcode</string>
+    <string name="qr_code_scan">Scan QR-Code</string>
     <string name="information">Information</string>
     <string name="logout">Logout</string>
     <string name="organisation">Organisation</string>
     <string name="settings">Settings</string>
     <string name="nfc_scan">Scan NFC Chip</string>
-    <string name="barcode_button_text">Scan Barcode</string>
-    <string name="barcode_camera_text">Scan the Barcode</string>
+    <string name="qr_code_button_text">Scan QR-Code</string>
+    <string name="qr_code_camera_text">Scan the QR-Code</string>
     <string name="cpu">CPU:</string>
     <string name="device">Device:</string>
     <string name="end_app">Close Application</string>

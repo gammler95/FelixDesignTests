@@ -18,7 +18,7 @@
 
         <item
             android:id="@+id/barcode_scan_id"
-            android:title="@string/barcode_scan"
+            android:title="@string/qr_code_scan"
             android:icon="@drawable/ic_photo_camera_black_48px">
         </item>
 

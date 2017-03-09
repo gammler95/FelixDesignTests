@@ -30,7 +30,7 @@ public class DashboardFragment extends Fragment
         final TextView cpu = (TextView) view.findViewById(R.id.cpu);
 
         device.setText(getDeviceName());
-        cpu.setText(getCpuInfo()); //muss noch angepasst werden
+        cpu.setText(getCpuInfo());
 
         return view;
     }
@@ -66,26 +66,23 @@ public class DashboardFragment extends Fragment
     private String getCpuInfo()
     {
         StringBuffer sb = new StringBuffer();
-        sb.append("abi: ").append(Build.CPU_ABI).append("n");
-
         if (new File("/proc/cpuinfo").exists())
         {
-            try {
+            try
+            {
                 BufferedReader br = new BufferedReader(new FileReader(new File("/proc/cpuinfo")));
-                String aLine;
-                while ((aLine = br.readLine()) != null) {
-                    sb.append(aLine + "n");
-                }
-                if (br != null)
-                {
-                    br.close();
-                }
+                sb.append(br.readLine());
+                br.close();
             }
             catch (IOException e)
             {
                 e.printStackTrace();
             }
         }
-        return sb.toString();
+
+        String string = sb.toString();
+        String substr = string.substring(12);
+
+        return substr;
     }
 }

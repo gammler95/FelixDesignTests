@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     -Bei Klick auf normale Notification --> man soll wieder im Notification Frag landen, nicht im Dashboard
     -Settings fixen & implementieren (Sprachenänderung fixen, NightMode implementieren)
     -Settings refactoren
-    -BarcodeScan fixen, dass der 2. Button nichtmehr nötig ist
+    -BarcodeScan --> kann ich auch QR scannen?
     -Dashboard mit Inhalt füllen (Hard-/Software)
     -Sensor Fragment mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class implementieren

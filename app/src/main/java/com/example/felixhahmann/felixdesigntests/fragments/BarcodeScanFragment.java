@@ -31,14 +31,7 @@ public class BarcodeScanFragment extends Fragment
             }
         });
 
-        Button bGetScanResult = (Button) view.findViewById(R.id.getScanResult);
-        bGetScanResult.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                getScanResult();
-            }
-        });
+        getScanResult(view);
 
         return view;
     }
@@ -53,9 +46,9 @@ public class BarcodeScanFragment extends Fragment
         integrator.initiateScan();
     }
 
-    public void getScanResult()
+    public void getScanResult(View view)
     {
-        TextView tv = (TextView) getView().findViewById(R.id.result);
+        TextView tv = (TextView) view.findViewById(R.id.result);
         tv.setText(((MainActivity)getActivity()).getBarcodeScanResult());
     }
 }

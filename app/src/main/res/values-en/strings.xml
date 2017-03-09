@@ -25,4 +25,13 @@
     <string name="save_password">Save password</string>
     <string name="sensor">Sensors</string>
     <string name="yes">Yes</string>
+    <string name="normal_notification_text">Normal notification</string>
+    <string name="notification_header">Your notification</string>
+    <string name="notification_text_hint">Enter your notification text here</string>
+    <string name="notifications">Notifications</string>
+    <string name="ok">Ok</string>
+    <string name="popup_notification_text">Popup window</string>
+    <string name="popup_title">This is your popup</string>
+    <string name="snackbar_notification_text">Snackbar</string>
+    <string name="info">Info</string>
 </resources>

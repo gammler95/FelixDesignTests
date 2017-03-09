@@ -10,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.felixhahmann.felixdesigntests.R;
@@ -29,8 +28,9 @@ public class MainActivity extends AppCompatActivity
     *** PUSH & PULL nicht vergessen!! ***
 
     -Bei Klick auf normale Notification --> man soll wieder im Notification Frag landen, nicht im Dashboard
-    -Settings fixen & implementieren (Sprachenänderung fixen, NightMode implementieren)
-    -Settings refactoren
+    -Settings: bei Language change wieder im Settingsfragment landen
+    -Settings: LogIn Act. soll auch in jeweiliger Sprache sein
+    -Settings: weiter implementieren (NightMode implementieren)
     -BarcodeScan --> kann ich auch QR scannen?
     -Dashboard mit Inhalt füllen (Hard-/Software)
     -Sensor Fragment mit Inhalt füllen (Texte dynamisieren!!)
@@ -50,13 +50,12 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
 
     String barcodeScanResult = "Leer";
+    boolean englishLanguage = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
-        //setLanguageInSettings();
 
         loadLayout();
 
@@ -64,27 +63,6 @@ public class MainActivity extends AppCompatActivity
 
         setNavigationView();
     }
-
-
-
-    /*
-    public void setLanguageInSettings()
-    {
-        String currentLanguage = getResources().getConfiguration().locale.toString();
-        switch (currentLanguage)
-        {
-            case "de_DE":
-                language = 0;
-                break;
-
-            case "en_US":
-                language = 1;
-                break;
-        }
-    }
-    */
-
-
 
     public void loadLayout()
     {
@@ -189,7 +167,6 @@ public class MainActivity extends AppCompatActivity
         actionBarDrawerToggle.syncState();
     }
 
-    //For Barodescan
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
@@ -218,5 +195,15 @@ public class MainActivity extends AppCompatActivity
     {
         super.onRestoreInstanceState(savedInstanceState);
         barcodeScanResult = savedInstanceState.getString("Barcode_Scan_Result");
+    }
+
+    public boolean getEnglishLanguage()
+    {
+        return englishLanguage;
+    }
+
+    public void setEnglishLanguage(boolean b)
+    {
+        englishLanguage = b;
     }
 }

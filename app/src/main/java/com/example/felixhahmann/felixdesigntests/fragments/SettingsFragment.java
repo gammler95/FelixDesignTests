@@ -15,7 +15,6 @@ import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
 import com.example.felixhahmann.felixdesigntests.R;
-import com.example.felixhahmann.felixdesigntests.activities.LogInActivity;
 import com.example.felixhahmann.felixdesigntests.activities.MainActivity;
 
 
@@ -32,23 +31,33 @@ public class SettingsFragment extends Fragment
         final CheckBox german_checkBox = (CheckBox)view.findViewById( R.id.german_checkBox);
         final CheckBox english_checkBox = (CheckBox)view.findViewById( R.id.english_checkBox);
 
+        setCurrentCheckBox(german_checkBox, english_checkBox);
 
-        //***********************
+        buttonGerman(german_checkBox);
 
-        /*
-        int language = ((LogInActivity) this.getActivity()).getLanguage();
-        switch (language)
+        buttonEnglish(english_checkBox);
+
+        return view;
+    }
+
+    public void setCurrentCheckBox(CheckBox german_checkBox, CheckBox english_checkBox)
+    {
+        Locale current = getResources().getConfiguration().locale;
+
+        if (current.toString().equals("en"))
         {
-            case 0:
-                german_checkBox.setChecked(true);
-                break;
-
-            case 1:
-                english_checkBox.setChecked(true);
-                break;
+            german_checkBox.setChecked(false);
+            english_checkBox.setChecked(true);
         }
-        */
+        else
+        {
+            german_checkBox.setChecked(true);
+            english_checkBox.setChecked(false);
+        }
+    }
 
+    public void buttonGerman(CheckBox german_checkBox)
+    {
         german_checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
@@ -56,21 +65,14 @@ public class SettingsFragment extends Fragment
             {
                 if (isChecked)
                 {
-                    //((LogInActivity) getActivity()).setLanguage(0);
-
-                    Locale myLocale = new Locale("de_DE");
-                    Resources res = getResources();
-                    DisplayMetrics dm = res.getDisplayMetrics();
-                    Configuration conf = res.getConfiguration();
-                    conf.locale = myLocale;
-                    res.updateConfiguration(conf, dm);
-                    Intent refresh = new Intent(getActivity(), MainActivity.class);
-                    //refresh.putExtra("language", true);
-                    startActivity(refresh);
+                    setLocale("de");
                 }
             }
         });
+    }
 
+    public void buttonEnglish(CheckBox english_checkBox)
+    {
         english_checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
@@ -78,21 +80,22 @@ public class SettingsFragment extends Fragment
             {
                 if (isChecked)
                 {
-                    //((LogInActivity) getActivity()).setLanguage(1);
-
-                    Locale myLocale = new Locale("en_US");
-                    Resources res = getResources();
-                    DisplayMetrics dm = res.getDisplayMetrics();
-                    Configuration conf = res.getConfiguration();
-                    conf.locale = myLocale;
-                    res.updateConfiguration(conf, dm);
-                    Intent refresh = new Intent(getActivity(), MainActivity.class);
-                    //refresh.putExtra("language", false);
-                    startActivity(refresh);
+                    setLocale("en");
                 }
             }
         });
+    }
 
-        return view;
+    public void setLocale(String lang)
+    {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
+        Intent refresh = new Intent(getContext(), MainActivity.class);
+        startActivity(refresh);
+        getActivity().finish();
     }
 }

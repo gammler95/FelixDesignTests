@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
 
     String barcodeScanResult = "Leer";
-    boolean englishLanguage = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -197,13 +196,8 @@ public class MainActivity extends AppCompatActivity
         barcodeScanResult = savedInstanceState.getString("Barcode_Scan_Result");
     }
 
-    public boolean getEnglishLanguage()
+    public void onBackPressed()
     {
-        return englishLanguage;
-    }
-
-    public void setEnglishLanguage(boolean b)
-    {
-        englishLanguage = b;
+        //nothing
     }
 }

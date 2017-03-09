@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity
 
     *** PUSH & PULL nicht vergessen!! ***
 
-    -Settings: weiter implementieren (NightMode implementieren)
+    -Settings: Nightmode fixen
+    -Settings: noch mehr Einstellungen?
     -Dashboard: mit Inhalt füllen (Hard-/Software)
     -Sensor Fragment: mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class: implementieren

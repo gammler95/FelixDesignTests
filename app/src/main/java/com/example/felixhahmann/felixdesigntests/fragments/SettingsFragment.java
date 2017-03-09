@@ -1,7 +1,9 @@
 package com.example.felixhahmann.felixdesigntests.fragments;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 import android.widget.Switch;
+import 	android.app.UiModeManager;
 
 import com.example.felixhahmann.felixdesigntests.R;
 import com.example.felixhahmann.felixdesigntests.activities.MainActivity;
@@ -33,7 +36,11 @@ public class SettingsFragment extends Fragment
         CheckBox german_checkBox = (CheckBox)view.findViewById(R.id.german_checkBox);
         CheckBox english_checkBox = (CheckBox)view.findViewById(R.id.english_checkBox);
 
+        setCurrentNightmodeSwitch(nightmode_switch);
+        setCurrentCheckBoxes(german_checkBox, english_checkBox);
 
+
+        //Nightmode geht noch nicht. Er aktiviert sich nicht richtig. Siehe neues color.xml
         nightmode_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
@@ -41,17 +48,22 @@ public class SettingsFragment extends Fragment
                 if(isChecked)
                 {
                     //Nightmode aktivieren
+                    UiModeManager umm = (UiModeManager) getContext().getSystemService(Context.UI_MODE_SERVICE);
+                    umm.setNightMode(UiModeManager.MODE_NIGHT_YES);
+                    refreshActivity();
                 }
                 else
                 {
                     //Nightmode deaktivieren
+                    UiModeManager umm = (UiModeManager) getContext().getSystemService(Context.UI_MODE_SERVICE);
+                    umm.setNightMode(UiModeManager.MODE_NIGHT_NO);
+                    refreshActivity();
                 }
             }
         });
 
 
 
-        setCurrentCheckBox(german_checkBox, english_checkBox);
 
         buttonGerman(german_checkBox);
 
@@ -60,7 +72,22 @@ public class SettingsFragment extends Fragment
         return view;
     }
 
-    public void setCurrentCheckBox(CheckBox german_checkBox, CheckBox english_checkBox)
+    public void setCurrentNightmodeSwitch(Switch nightmode_switch)
+    {
+        UiModeManager umm = (UiModeManager) getContext().getSystemService(Context.UI_MODE_SERVICE);
+        int currentNightMode = umm.getNightMode();
+
+        if(currentNightMode == 0 || currentNightMode == 1)
+        {
+            nightmode_switch.setChecked(false);
+        }
+        else if(currentNightMode == 2)
+        {
+            nightmode_switch.setChecked(true);
+        }
+    }
+
+    public void setCurrentCheckBoxes(CheckBox german_checkBox, CheckBox english_checkBox)
     {
         Locale current = getResources().getConfiguration().locale;
 
@@ -114,6 +141,11 @@ public class SettingsFragment extends Fragment
         Configuration conf = res.getConfiguration();
         conf.locale = myLocale;
         res.updateConfiguration(conf, dm);
+        refreshActivity();
+    }
+
+    public void refreshActivity()
+    {
         Intent refresh = new Intent(getContext(), MainActivity.class);
         startActivity(refresh);
         getActivity().finish();

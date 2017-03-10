@@ -18,8 +18,8 @@
     <string name="dashboard">Dashboard</string>
     <string name="device">Gerät:</string>
     <string name="cpu">CPU:</string>
-    <string name="ram_typ">RAM Typ:</string>
-    <string name="ram_size">RAM Größe:</string>
+    <string name="cpu_speed">CPU Geschwindigkeit:</string>
+    <string name="ram_size">RAM:</string>
 
     <!-- Sensors -->
     <string name="sensor">Sensoren</string>

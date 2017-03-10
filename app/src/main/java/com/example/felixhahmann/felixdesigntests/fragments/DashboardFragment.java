@@ -17,6 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.text.DecimalFormat;
+import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,12 +33,12 @@ public class DashboardFragment extends Fragment
 
         TextView device = (TextView) view.findViewById(R.id.device);
         TextView cpu = (TextView) view.findViewById(R.id.cpu);
-        TextView ramTyp = (TextView) view.findViewById(R.id.ram_typ);
+        TextView cpu_speed = (TextView) view.findViewById(R.id.cpu_speed);
         TextView ramSize = (TextView) view.findViewById(R.id.ram_size);
 
         device.setText(getDeviceName());
         cpu.setText(getCpuInfo());
-        ramTyp.setText(getRamTyp());
+        cpu_speed.setText(getCpuSpeed());
         ramSize.setText(getRamSize());
 
         return view;
@@ -93,7 +94,7 @@ public class DashboardFragment extends Fragment
         return substr;
     }
 
-    public String getRamTyp()
+    public String getCpuSpeed()
     {
         return "*** Coming soon ***";
     }
@@ -109,18 +110,15 @@ public class DashboardFragment extends Fragment
             reader = new RandomAccessFile("/proc/meminfo", "r");
             load = reader.readLine();
 
-            // Get the Number value from the string
             Pattern p = Pattern.compile("(\\d+)");
             Matcher m = p.matcher(load);
             String value = "";
             while (m.find()) {
                 value = m.group(1);
-                // System.out.println("Ram : " + value);
             }
             reader.close();
 
             totRam = Double.parseDouble(value);
-            // totRam = totRam / 1024;
 
             double mb = totRam / 1024.0;
             double gb = totRam / 1048576.0;
@@ -139,7 +137,6 @@ public class DashboardFragment extends Fragment
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
-            // Streams.close(reader);
         }
 
         return lastValue;

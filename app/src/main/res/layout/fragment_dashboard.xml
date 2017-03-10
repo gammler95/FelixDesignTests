@@ -49,10 +49,10 @@
         android:layout_marginLeft="8dp"/>
 
     <TextView
-        android:id="@+id/ram_typ_text"
+        android:id="@+id/cpu_speed_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ram_typ"
+        android:text="@string/cpu_speed"
         android:textStyle="bold"
         android:textSize="16dp"
         android:layout_below="@+id/cpu_text"
@@ -60,13 +60,13 @@
         android:layout_marginLeft="16dp"/>
 
     <TextView
-        android:id="@+id/ram_typ"
+        android:id="@+id/cpu_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="***"
         android:textStyle="italic"
         android:textSize="16dp"
-        android:layout_toRightOf="@id/ram_typ_text"
+        android:layout_toRightOf="@id/cpu_speed_text"
         android:layout_below="@+id/cpu"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="8dp"/>
@@ -78,7 +78,7 @@
         android:text="@string/ram_size"
         android:textStyle="bold"
         android:textSize="16dp"
-        android:layout_below="@+id/ram_typ_text"
+        android:layout_below="@+id/cpu_speed_text"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"/>
 
@@ -90,7 +90,7 @@
         android:textStyle="italic"
         android:textSize="16dp"
         android:layout_toRightOf="@id/ram_size_text"
-        android:layout_below="@+id/ram_typ"
+        android:layout_below="@+id/cpu_speed"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="8dp"/>
 

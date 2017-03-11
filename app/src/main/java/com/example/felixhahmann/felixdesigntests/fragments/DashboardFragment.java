@@ -1,6 +1,8 @@
 package com.example.felixhahmann.felixdesigntests.fragments;
 
 import android.os.Build;
+import android.os.Environment;
+import android.os.StatFs;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -36,11 +38,13 @@ public class DashboardFragment extends Fragment
         TextView cpu = (TextView) view.findViewById(R.id.cpu);
         TextView cpu_speed = (TextView) view.findViewById(R.id.cpu_speed);
         TextView ramSize = (TextView) view.findViewById(R.id.ram_size);
+        TextView romSize = (TextView) view.findViewById(R.id.rom_size);
 
         device.setText(getDeviceName());
         cpu.setText(getCpuInfo());
         cpu_speed.setText(getCpuSpeed());
         ramSize.setText(getRamSize());
+        romSize.setText(getRomSize());
 
         return view;
     }
@@ -165,5 +169,42 @@ public class DashboardFragment extends Fragment
         }
 
         return lastValue;
+    }
+
+    public String getRomSize()
+    {
+        File path = Environment.getDataDirectory();
+        StatFs stat = new StatFs(path.getPath());
+        long blockSize = stat.getBlockSize();
+        long totalBlocks = stat.getBlockCount();
+        return formatRomSize(totalBlocks * blockSize);
+    }
+
+    public static String formatRomSize(long size)
+    {
+        String suffix = null;
+
+        if (size >= 1024)
+        {
+            suffix = "KB";
+            size /= 1024;
+            if (size >= 1024)
+            {
+                suffix = "MB";
+                size /= 1024;
+            }
+        }
+
+        StringBuilder resultBuffer = new StringBuilder(Long.toString(size));
+
+        int commaOffset = resultBuffer.length() - 3;
+        while (commaOffset > 0)
+        {
+            resultBuffer.insert(commaOffset, ',');
+            commaOffset -= 3;
+        }
+
+        if (suffix != null) resultBuffer.append(suffix);
+        return resultBuffer.toString();
     }
 }

@@ -15,11 +15,13 @@
 
 
     <!-- Dashboard -->
+    <string name="hardware"><u>Hardware</u></string>
     <string name="dashboard">Dashboard</string>
     <string name="device">Gerät:</string>
     <string name="cpu">CPU:</string>
     <string name="cpu_speed">CPU Geschwindigkeit:</string>
     <string name="ram_size">RAM:</string>
+    <string name="rom_size">ROM:</string>
 
     <!-- Sensors -->
     <string name="sensor">Sensoren</string>

@@ -39,6 +39,11 @@
 
     <!-- Information -->
     <string name="information">Informationen</string>
+    <string name="infoText">Diese App wurde von dem Informatikstudenten Felix Hahmann der Hochschule für angewandte Wissenschaften Würzburg-Schweinfurt erstellt.</string>
+    <string name="infoStartText">Entwicklungsstart:</string>
+    <string name="infoStart">01.03.2017</string>
+    <string name="infoEndText">Entwicklungsabschluss:</string>
+    <string name="infoEnd">Die App befindet sich noch in Entwicklung</string>
 
     <!-- Notifications -->
     <string name="notifications">Benachrichtigungen</string>

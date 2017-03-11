@@ -34,23 +34,33 @@ public class DashboardFragment extends Fragment
 
         ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.dashboard));
 
+        loadHardwareInfo(view);
+
+        loadSoftwareInfo(view);
+
+        return view;
+    }
+
+    public void loadHardwareInfo(View view)
+    {
         TextView device = (TextView) view.findViewById(R.id.device);
         TextView cpu = (TextView) view.findViewById(R.id.cpu);
         TextView cpu_speed = (TextView) view.findViewById(R.id.cpu_speed);
         TextView ramSize = (TextView) view.findViewById(R.id.ram_size);
         TextView romSize = (TextView) view.findViewById(R.id.rom_size);
 
-        TextView androidVersion = (TextView) view.findViewById(R.id.android_version);
-
         device.setText(getDeviceName());
         cpu.setText(getCpuInfo());
         cpu_speed.setText(getCpuSpeed());
         ramSize.setText(getRamSize());
         romSize.setText(getRomSize());
+    }
+
+    public void loadSoftwareInfo(View view)
+    {
+        TextView androidVersion = (TextView) view.findViewById(R.id.android_version);
 
         androidVersion.setText(getAndroidVersion());
-
-        return view;
     }
 
     public String getDeviceName()

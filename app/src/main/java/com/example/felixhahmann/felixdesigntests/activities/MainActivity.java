@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity
     -Settings: Nightmode fixen
     -Settings: noch mehr Einstellungen?
     -Dashboard: mit Inhalt füllen (Hard-/Software und live Daten)
+    -Dashborad: refactoren => Hard und Softwareklassen erstellen
     -Sensor Fragment: mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class: implementieren
-    -Infoseite: erstellen
     -NFC: Chips auslesen programmieren
 
     Nice to have:

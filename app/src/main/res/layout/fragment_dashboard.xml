@@ -129,4 +129,40 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="8dp"/>
 
+
+
+    <TextView
+        android:id="@+id/software_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/software"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@+id/rom_size_text"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"/>
+
+    <TextView
+        android:id="@+id/android_version_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/android_version"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_below="@+id/software_text"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"/>
+
+    <TextView
+        android:id="@+id/android_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="***"
+        android:textStyle="italic"
+        android:textSize="16dp"
+        android:layout_toRightOf="@id/android_version_text"
+        android:layout_below="@+id/software_text"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"/>
+
 </RelativeLayout>

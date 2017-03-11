@@ -40,11 +40,15 @@ public class DashboardFragment extends Fragment
         TextView ramSize = (TextView) view.findViewById(R.id.ram_size);
         TextView romSize = (TextView) view.findViewById(R.id.rom_size);
 
+        TextView androidVersion = (TextView) view.findViewById(R.id.android_version);
+
         device.setText(getDeviceName());
         cpu.setText(getCpuInfo());
         cpu_speed.setText(getCpuSpeed());
         ramSize.setText(getRamSize());
         romSize.setText(getRomSize());
+
+        androidVersion.setText(getAndroidVersion());
 
         return view;
     }
@@ -108,7 +112,7 @@ public class DashboardFragment extends Fragment
                 BufferedReader freqBufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(new File("/sys/devices/system/cpu/cpu" + i + "/cpufreq/scaling_max_freq"))));
                 String freq = String.valueOf(Integer.valueOf(freqBufferedReader.readLine()).intValue() / 1000);
                 freqBufferedReader.close();
-                return freq + "mHz";
+                return freq + " mHz";
             }
             catch (Exception e)
             {
@@ -186,16 +190,16 @@ public class DashboardFragment extends Fragment
 
         if (size >= 1024)
         {
-            suffix = "KB";
+            suffix = " MB";
             size /= 1024;
             if (size >= 1024)
             {
-                suffix = "MB";
+                suffix = " GB";
                 size /= 1024;
             }
         }
 
-        StringBuilder resultBuffer = new StringBuilder(Long.toString(size));
+        StringBuilder resultBuffer = new StringBuilder(Long.toString(size / 1000));
 
         int commaOffset = resultBuffer.length() - 3;
         while (commaOffset > 0)
@@ -206,5 +210,10 @@ public class DashboardFragment extends Fragment
 
         if (suffix != null) resultBuffer.append(suffix);
         return resultBuffer.toString();
+    }
+
+    public String getAndroidVersion()
+    {
+        return Build.VERSION.RELEASE;
     }
 }

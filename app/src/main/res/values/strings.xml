@@ -22,6 +22,8 @@
     <string name="cpu_speed">CPU Geschwindigkeit:</string>
     <string name="ram_size">RAM:</string>
     <string name="rom_size">ROM:</string>
+    <string name="software"><u>Software</u></string>
+    <string name="android_version">Android Version:</string>
 
     <!-- Sensors -->
     <string name="sensor">Sensoren</string>

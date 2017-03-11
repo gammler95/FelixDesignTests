@@ -13,11 +13,12 @@ import com.example.felixhahmann.felixdesigntests.activities.MainActivity;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.text.DecimalFormat;
-import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -96,7 +97,21 @@ public class DashboardFragment extends Fragment
 
     public String getCpuSpeed()
     {
-        return "*** Coming soon ***";
+        for (int i = 0; i < 10; i++)
+        {
+            try
+            {
+                BufferedReader freqBufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(new File("/sys/devices/system/cpu/cpu" + i + "/cpufreq/scaling_max_freq"))));
+                String freq = String.valueOf(Integer.valueOf(freqBufferedReader.readLine()).intValue() / 1000);
+                freqBufferedReader.close();
+                return freq + "mHz";
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 
     public String getRamSize()
@@ -106,14 +121,16 @@ public class DashboardFragment extends Fragment
         DecimalFormat twoDecimalForm = new DecimalFormat("#.##");
         double totRam = 0;
         String lastValue = "";
-        try {
+        try
+        {
             reader = new RandomAccessFile("/proc/meminfo", "r");
             load = reader.readLine();
 
             Pattern p = Pattern.compile("(\\d+)");
             Matcher m = p.matcher(load);
             String value = "";
-            while (m.find()) {
+            while (m.find())
+            {
                 value = m.group(1);
             }
             reader.close();
@@ -124,19 +141,27 @@ public class DashboardFragment extends Fragment
             double gb = totRam / 1048576.0;
             double tb = totRam / 1073741824.0;
 
-            if (tb > 1) {
+            if (tb > 1)
+            {
                 lastValue = twoDecimalForm.format(tb).concat(" TB");
-            } else if (gb > 1) {
+            }
+            else if (gb > 1)
+            {
                 lastValue = twoDecimalForm.format(gb).concat(" GB");
-            } else if (mb > 1) {
+            }
+            else if (mb > 1)
+            {
                 lastValue = twoDecimalForm.format(mb).concat(" MB");
-            } else {
+            }
+            else
+            {
                 lastValue = twoDecimalForm.format(totRam).concat(" KB");
             }
 
-        } catch (IOException ex) {
+        }
+        catch (IOException ex)
+        {
             ex.printStackTrace();
-        } finally {
         }
 
         return lastValue;

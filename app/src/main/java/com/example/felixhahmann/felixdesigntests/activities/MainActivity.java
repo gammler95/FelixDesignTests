@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity
 
     -Settings: Nightmode fixen
     -Settings: noch mehr Einstellungen?
-    -Dashboard: RAM Typ anzeigen
     -Dashboard: mit Inhalt füllen (Hard-/Software und evtl. live Daten?)
     -Sensor Fragment: mit Inhalt füllen (Texte dynamisieren!!)
     -Sensors Class: implementieren
